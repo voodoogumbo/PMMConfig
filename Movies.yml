@@ -1,0 +1,32 @@
+collections: 
+  James Bond Collection:
+    sort_title: jam00
+    tmdb_collection_details:
+      - 645
+      - https://www.themoviedb.org/collection/645-james-bond-collection
+  John Wick Collection:
+    sort_title: "john w"
+    tmdb_collection_details:
+      - 404609
+      - https://www.themoviedb.org/collection/404609-john-wick-collection
+  Jurassic Park Collection:
+    sort_title: jur00
+    tmdb_collection_details:
+      - 328
+      - https://www.themoviedb.org/collection/328-jurassic-park-collection
+  Pirates of the Caribbean Collection:
+    sort_title: Pir00                        
+    tmdb_collection_details:
+      - 295
+      - https://www.themoviedb.org/collection/295-pirates-of-the-caribbean-collection
+  Tinkerbell Collection:
+    sort_title: Tin00
+    tmdb_collection_details:
+      - 315595
+      - https://www.themoviedb.org/collection/315595-tinker-bell-collection
+#  Top 50 Grossing Films of All Time (Worldwide):
+#    sort_title: "!_Top 50 All Time"
+#    tmdb_list: 10  
+#    collection_order: custom
+#    sync_mode: sync
+      

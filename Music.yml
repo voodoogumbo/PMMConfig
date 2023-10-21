@@ -1,0 +1,23 @@
+overlays:
+  Christmas:
+    overlay:
+      name: christmasribbon2
+      horizontal_offset: 0
+      horizontal_align: right
+      vertical_offset: 0
+      vertical_align: bottom
+    builder_level: album
+    plex_search:
+      all:
+        album_genre: Holiday
+  Dewpsi:
+    overlay:
+      name: dewpsi10
+      horizontal_offset: 0
+      horizontal_align: right
+      vertical_offset: 0
+      vertical_align: bottom
+    builder_level: album
+    plex_search:
+      all:
+        album_genre: Dewpsi

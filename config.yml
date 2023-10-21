@@ -1,0 +1,170 @@
+## This file is current as of 2023 October 20 for HOGWARTS (p.s. I love you Bons, Beans, RJ, Math and Chris)
+
+libraries:                       # This is called out once within the config.yml file
+  Movies:
+    metadata_path:
+    - file: config/Movies.yml
+    - pmm: basic
+    - pmm: other_award
+    - pmm: imdb
+    - pmm: universe
+      template_variables:
+        use_seperator: false
+        collection_order: alpha
+    - pmm: seasonal
+      template_variables:
+        use_seperator: false
+        sep_style: red
+        use_patrick: false
+        use_mother: false
+        use_memorial: false
+        use_father: false
+        use_labor: false
+        schedule_valentine: range(02/01-02/15)
+        schedule_independence: range(07/01-07/05)
+        schedule_thanksgiving: range(11/01-11/26)
+        schedule_christmas: range(11/26-01/01)
+        schedule_latinx: never
+    - pmm: studio
+      template_variables:
+        use_seperator: false
+        include:
+        - Dreamworks Studios
+        - Marvel Studios
+        - Pixar
+        - Studio Ghibli
+        - Walt Disney Pictures
+    overlay_path:
+    - pmm: ribbon
+      template_variables:
+        weight_metacritic: 35
+    - pmm: resolution
+    - pmm: ratings
+      template_variables:
+        rating1: critic
+        rating1_image: rt_tomato
+        rating2: audience
+        rating2_image: rt_popcorn
+        rating3: user
+        rating3_image: imdb
+#          horizontal_position: right
+    - pmm: commonsense
+      template_variables:
+        horizontal_align: left
+        vertical_align: bottom
+    - pmm: flixpatrol
+      template_variables:
+      time_window: this_month
+#          horizontal_position: left
+    operations:
+      mass_critic_rating_update: mdb_tomatoes
+      mass_audience_rating_update: mdb_tomatoesaudience
+      mass_user_rating_update: imdb
+  TV Shows:
+    metadata_path:
+    - pmm: basic
+    - pmm: other_award
+    - pmm: tmdb
+    - pmm: universe
+    - pmm: network
+      template_variables:
+        use_seperator: false
+    - pmm: flixpatrol
+      template_variables:
+        use_seperator: false
+        include:
+        - disney
+        location: united_states
+        time_window: this_month
+    overlay_path:
+    - remove_overlays: false     # Set this to true to remove all overlays
+    - pmm: ribbon
+      template_variables:
+        weight_metacritic: 35
+    - pmm: ratings
+      template_variables:
+        rating1: critic
+        rating1_image: rt_tomato
+        rating2: audience
+        rating2_image: metacritic
+        rating3: user
+        rating3_image: imdb
+#          horizontal_position: right
+    - pmm: status
+      template_variables:
+        horizontal_align: left
+        vertical_align: top
+    - pmm: commonsense
+      template_variables:
+        horizontal_align: left
+        vertical_align: bottom
+    - pmm: flixpatrol
+      template_variables:
+        time_window: this_month
+    operations:
+      mass_critic_rating_update: mdb_tomatoes
+      mass_audience_rating_update: mdb_metacritic
+      mass_user_rating_update: imdb
+  Music:                        # These are names of libraries in your Plex
+    metadata_path:
+    overlay_path:
+    - file: config/Music.yml
+playlist_files:
+- pmm: playlist                  # This is a file within PMM's defaults folder
+  # see the wiki for how to use local files, folders, URLs, or files from git
+settings:
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 0
+  create_asset_folders: false
+  prioritize_assets: false
+  dimensional_asset_rename: false
+  download_url_assets: false
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 1
+  default_collection_order:
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_unconfigured: true
+  show_filtered: false
+  show_options: false
+  show_missing: true
+  show_missing_assets: true
+  save_report: false
+  tvdb_language: eng
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  playlist_sync_to_user: all
+  playlist_exclude_users:
+  playlist_report: false
+  verify_ssl: true
+  custom_repo:
+  check_nightly: false
+plex:                            # Can be individually specified per library as well; REQUIRED for the script to run
+  url: http://192.168.13.66:32400
+  token: azCpSyX165U8KhqM3WzR
+  timeout: 60
+  photo_transcoder: true
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+  db_cache:
+tmdb:                            # REQUIRED for the script to run
+  apikey: 2fb8f83c1ba4185c603bcd52a6db010c
+  language: en
+  region: US
+  cache_expiration: 60
+mdblist:
+  apikey: 3p8etlzi07711v4566vw1cgr2
+  cache_expiration: 60
+
